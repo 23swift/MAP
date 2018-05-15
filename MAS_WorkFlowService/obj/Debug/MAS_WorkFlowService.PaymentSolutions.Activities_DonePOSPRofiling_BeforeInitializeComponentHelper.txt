@@ -1,0 +1,2 @@
+MAS_WorkFlowService.PaymentSolutions.IService.DonePOSPRofiling.g.xaml
+XamlStaticHelperNamespace._XamlStaticHelper

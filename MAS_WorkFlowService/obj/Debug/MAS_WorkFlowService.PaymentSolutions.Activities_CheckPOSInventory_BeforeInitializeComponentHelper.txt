@@ -1,0 +1,2 @@
+MAS_WorkFlowService.PaymentSolutions.IService.CheckPOSInventory.g.xaml
+XamlStaticHelperNamespace._XamlStaticHelper

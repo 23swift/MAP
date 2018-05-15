@@ -1,0 +1,351 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<m:POSFlow xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:m="clr-namespace:MAS_WorkFlowService;assembly=MAS_WorkFlowService" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mca="clr-namespace:Microsoft.CSharp.Activities;assembly=System.Activities" xmlns:p="http://schemas.microsoft.com/netfx/2009/xaml/servicemodel" xmlns:p1="http://tempuri.org/" xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ssx="clr-namespace:System.ServiceModel.XamlIntegration;assembly=System.ServiceModel" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Text</x:String>
+      <x:String>System.ServiceModel.Activities</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.CSharp</AssemblyReference>
+      <AssemblyReference>System.Configuration</AssemblyReference>
+      <AssemblyReference>System.Web.DynamicData</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Web.Entity</AssemblyReference>
+      <AssemblyReference>System.Web.ApplicationServices</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Entity</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
+      <AssemblyReference>System.ServiceModel.Channels</AssemblyReference>
+      <AssemblyReference>System.Web</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>DA</AssemblyReference>
+      <AssemblyReference>MerchantAquiringSystemWithWF</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>MAS_WorkFlowService</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <m:POSFlow.Implementation>
+    <Flowchart>
+      <TextExpression.Namespaces>
+        <sco:Collection x:TypeArguments="x:String">
+          <x:String>System</x:String>
+          <x:String>System.Collections.Generic</x:String>
+          <x:String>System.Data</x:String>
+          <x:String>System.Linq</x:String>
+          <x:String>System.Text</x:String>
+          <x:String>System.ServiceModel.Activities</x:String>
+        </sco:Collection>
+      </TextExpression.Namespaces>
+      <TextExpression.References>
+        <sco:Collection x:TypeArguments="AssemblyReference">
+          <AssemblyReference>Microsoft.CSharp</AssemblyReference>
+          <AssemblyReference>System.Configuration</AssemblyReference>
+          <AssemblyReference>System.Web.DynamicData</AssemblyReference>
+          <AssemblyReference>System.Drawing</AssemblyReference>
+          <AssemblyReference>System.Web.Entity</AssemblyReference>
+          <AssemblyReference>System.Web.ApplicationServices</AssemblyReference>
+          <AssemblyReference>System</AssemblyReference>
+          <AssemblyReference>System.Activities</AssemblyReference>
+          <AssemblyReference>System.Core</AssemblyReference>
+          <AssemblyReference>System.Data</AssemblyReference>
+          <AssemblyReference>System.Data.Entity</AssemblyReference>
+          <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+          <AssemblyReference>System.ServiceModel</AssemblyReference>
+          <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
+          <AssemblyReference>System.ServiceModel.Channels</AssemblyReference>
+          <AssemblyReference>System.Web</AssemblyReference>
+          <AssemblyReference>System.Xaml</AssemblyReference>
+          <AssemblyReference>System.Xml</AssemblyReference>
+          <AssemblyReference>System.Xml.Linq</AssemblyReference>
+          <AssemblyReference>DA</AssemblyReference>
+          <AssemblyReference>MerchantAquiringSystemWithWF</AssemblyReference>
+          <AssemblyReference>mscorlib</AssemblyReference>
+          <AssemblyReference>MAS_WorkFlowService</AssemblyReference>
+        </sco:Collection>
+      </TextExpression.References>
+      <Flowchart.Variables>
+        <Variable x:TypeArguments="x:Int32" Name="posRequestId" />
+        <Variable x:TypeArguments="p:CorrelationHandle" Name="corrPosRequestId" />
+        <Variable x:TypeArguments="x:Boolean" Name="isApprove" />
+        <Variable x:TypeArguments="x:Boolean" Name="isComplete" />
+        <Variable x:TypeArguments="x:Int32" Name="requestId" />
+      </Flowchart.Variables>
+      <Flowchart.StartNode>
+        <FlowStep x:Name="__ReferenceID14">
+          <Sequence DisplayName="LoadRequetToPOSWorkflow">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="p:CorrelationHandle" x:Name="__ReferenceID0" Name="__handle1" />
+            </Sequence.Variables>
+            <p:Receive x:Name="__ReferenceID1" CanCreateInstance="True" OperationName="LoadRequestToPOSFlow" ServiceContractName="p1:IService">
+              <p:Receive.CorrelatesOn>
+                <p:XPathMessageQuery x:Key="requestId">
+                  <p:XPathMessageQuery.Namespaces>
+                    <ssx:XPathMessageContextMarkup>
+                      <x:String x:Key="xgSc">http://tempuri.org/</x:String>
+                    </ssx:XPathMessageContextMarkup>
+                  </p:XPathMessageQuery.Namespaces>sm:body()/xgSc:LoadRequestToPOSFlow/xgSc:paramRequestId</p:XPathMessageQuery>
+              </p:Receive.CorrelatesOn>
+              <p:Receive.CorrelatesWith>
+                <InArgument x:TypeArguments="p:CorrelationHandle">
+                  <mca:CSharpValue x:TypeArguments="p:CorrelationHandle">argCorrRequestId</mca:CSharpValue>
+                </InArgument>
+              </p:Receive.CorrelatesWith>
+              <p:Receive.CorrelationInitializers>
+                <p:RequestReplyCorrelationInitializer>
+                  <p:RequestReplyCorrelationInitializer.CorrelationHandle>
+                    <InArgument x:TypeArguments="p:CorrelationHandle">
+                      <VariableValue x:TypeArguments="p:CorrelationHandle" Variable="{x:Reference __ReferenceID0}" />
+                    </InArgument>
+                  </p:RequestReplyCorrelationInitializer.CorrelationHandle>
+                </p:RequestReplyCorrelationInitializer>
+              </p:Receive.CorrelationInitializers>
+              <p:ReceiveParametersContent>
+                <OutArgument x:TypeArguments="x:Int32" x:Key="paramPosRequestId">
+                  <mca:CSharpReference x:TypeArguments="x:Int32">posRequestId</mca:CSharpReference>
+                </OutArgument>
+                <OutArgument x:TypeArguments="x:Int32" x:Key="paramRequestId">
+                  <mca:CSharpReference x:TypeArguments="x:Int32">requestId</mca:CSharpReference>
+                </OutArgument>
+              </p:ReceiveParametersContent>
+            </p:Receive>
+            <p:SendReply Request="{x:Reference __ReferenceID1}" DisplayName="SendReplyToReceive" PersistBeforeSend="True">
+              <p:SendParametersContent>
+                <InArgument x:TypeArguments="x:String" x:Key="outMsg">Request Loaded to POS Flow</InArgument>
+              </p:SendParametersContent>
+            </p:SendReply>
+          </Sequence>
+          <FlowStep.Next>
+            <FlowStep x:Name="__ReferenceID15">
+              <p:InitializeCorrelation>
+                <p:InitializeCorrelation.Correlation>
+                  <InArgument x:TypeArguments="p:CorrelationHandle">
+                    <mca:CSharpValue x:TypeArguments="p:CorrelationHandle">corrPosRequestId</mca:CSharpValue>
+                  </InArgument>
+                </p:InitializeCorrelation.Correlation>
+                <InArgument x:TypeArguments="x:String" x:Key="posRequestId">
+                  <mca:CSharpValue x:TypeArguments="x:String">posRequestId.ToString()</mca:CSharpValue>
+                </InArgument>
+              </p:InitializeCorrelation>
+              <FlowStep.Next>
+                <FlowStep x:Name="__ReferenceID8">
+                  <Sequence DisplayName="POS Servicing">
+                    <Sequence.Variables>
+                      <Variable x:TypeArguments="p:CorrelationHandle" x:Name="__ReferenceID2" Name="__handle1" />
+                    </Sequence.Variables>
+                    <p:Receive x:Name="__ReferenceID3" CanCreateInstance="True" OperationName="SubmitToPOSInventory" ServiceContractName="p1:IService">
+                      <p:Receive.CorrelatesOn>
+                        <p:XPathMessageQuery x:Key="posRequestId">
+                          <p:XPathMessageQuery.Namespaces>
+                            <ssx:XPathMessageContextMarkup>
+                              <x:String x:Key="xgSc">http://tempuri.org/</x:String>
+                            </ssx:XPathMessageContextMarkup>
+                          </p:XPathMessageQuery.Namespaces>sm:body()/xgSc:SubmitToPOSInventory/xgSc:paramPOSRequestId</p:XPathMessageQuery>
+                      </p:Receive.CorrelatesOn>
+                      <p:Receive.CorrelatesWith>
+                        <InArgument x:TypeArguments="p:CorrelationHandle">
+                          <mca:CSharpValue x:TypeArguments="p:CorrelationHandle">corrPosRequestId</mca:CSharpValue>
+                        </InArgument>
+                      </p:Receive.CorrelatesWith>
+                      <p:Receive.CorrelationInitializers>
+                        <p:RequestReplyCorrelationInitializer>
+                          <p:RequestReplyCorrelationInitializer.CorrelationHandle>
+                            <InArgument x:TypeArguments="p:CorrelationHandle">
+                              <VariableValue x:TypeArguments="p:CorrelationHandle" Variable="{x:Reference __ReferenceID2}" />
+                            </InArgument>
+                          </p:RequestReplyCorrelationInitializer.CorrelationHandle>
+                        </p:RequestReplyCorrelationInitializer>
+                      </p:Receive.CorrelationInitializers>
+                      <p:ReceiveParametersContent>
+                        <OutArgument x:TypeArguments="x:Int32" x:Key="paramPOSRequestId">
+                          <mca:CSharpReference x:TypeArguments="x:Int32">posRequestId</mca:CSharpReference>
+                        </OutArgument>
+                        <OutArgument x:TypeArguments="x:Boolean" x:Key="paramIsComplete">
+                          <mca:CSharpReference x:TypeArguments="x:Boolean">isComplete</mca:CSharpReference>
+                        </OutArgument>
+                      </p:ReceiveParametersContent>
+                    </p:Receive>
+                    <p:SendReply Request="{x:Reference __ReferenceID3}" DisplayName="SendReplyToReceive" PersistBeforeSend="True">
+                      <p:SendParametersContent>
+                        <InArgument x:TypeArguments="x:String" x:Key="outMsg">POS Request Submitted to Inventory</InArgument>
+                      </p:SendParametersContent>
+                    </p:SendReply>
+                  </Sequence>
+                  <FlowStep.Next>
+                    <FlowDecision x:Name="__ReferenceID12" DisplayName="If Complete">
+                      <FlowDecision.Condition>
+                        <mca:CSharpValue x:TypeArguments="x:Boolean">isComplete</mca:CSharpValue>
+                      </FlowDecision.Condition>
+                      <FlowDecision.True>
+                        <FlowStep x:Name="__ReferenceID13">
+                          <Sequence DisplayName="Exit POS Flow" />
+                        </FlowStep>
+                      </FlowDecision.True>
+                      <FlowDecision.False>
+                        <FlowStep x:Name="__ReferenceID9">
+                          <Sequence DisplayName="POS Inventory">
+                            <Sequence.Variables>
+                              <Variable x:TypeArguments="p:CorrelationHandle" x:Name="__ReferenceID4" Name="__handle1" />
+                              <Variable x:TypeArguments="x:String" Name="msg" />
+                            </Sequence.Variables>
+                            <p:Receive x:Name="__ReferenceID5" OperationName="CheckPOSInventory" ServiceContractName="p1:IService">
+                              <p:Receive.CorrelatesOn>
+                                <p:XPathMessageQuery x:Key="posRequestId">
+                                  <p:XPathMessageQuery.Namespaces>
+                                    <ssx:XPathMessageContextMarkup>
+                                      <x:String x:Key="xgSc">http://tempuri.org/</x:String>
+                                    </ssx:XPathMessageContextMarkup>
+                                  </p:XPathMessageQuery.Namespaces>sm:body()/xgSc:CheckPOSInventory/xgSc:paramPosRequestId</p:XPathMessageQuery>
+                              </p:Receive.CorrelatesOn>
+                              <p:Receive.CorrelatesWith>
+                                <InArgument x:TypeArguments="p:CorrelationHandle">
+                                  <mca:CSharpValue x:TypeArguments="p:CorrelationHandle">corrPosRequestId</mca:CSharpValue>
+                                </InArgument>
+                              </p:Receive.CorrelatesWith>
+                              <p:Receive.CorrelationInitializers>
+                                <p:RequestReplyCorrelationInitializer>
+                                  <p:RequestReplyCorrelationInitializer.CorrelationHandle>
+                                    <InArgument x:TypeArguments="p:CorrelationHandle">
+                                      <VariableValue x:TypeArguments="p:CorrelationHandle" Variable="{x:Reference __ReferenceID4}" />
+                                    </InArgument>
+                                  </p:RequestReplyCorrelationInitializer.CorrelationHandle>
+                                </p:RequestReplyCorrelationInitializer>
+                              </p:Receive.CorrelationInitializers>
+                              <p:ReceiveParametersContent>
+                                <OutArgument x:TypeArguments="x:Int32" x:Key="paramPosRequestId">
+                                  <mca:CSharpReference x:TypeArguments="x:Int32">posRequestId</mca:CSharpReference>
+                                </OutArgument>
+                                <OutArgument x:TypeArguments="x:Boolean" x:Key="paramIsOk">
+                                  <mca:CSharpReference x:TypeArguments="x:Boolean">isApprove</mca:CSharpReference>
+                                </OutArgument>
+                              </p:ReceiveParametersContent>
+                            </p:Receive>
+                            <If>
+                              <If.Condition>
+                                <InArgument x:TypeArguments="x:Boolean">
+                                  <mca:CSharpValue x:TypeArguments="x:Boolean">isApprove</mca:CSharpValue>
+                                </InArgument>
+                              </If.Condition>
+                              <If.Then>
+                                <Assign>
+                                  <Assign.To>
+                                    <OutArgument x:TypeArguments="x:String">
+                                      <mca:CSharpReference x:TypeArguments="x:String">msg</mca:CSharpReference>
+                                    </OutArgument>
+                                  </Assign.To>
+                                  <Assign.Value>
+                                    <InArgument x:TypeArguments="x:String">Inventory Ok</InArgument>
+                                  </Assign.Value>
+                                </Assign>
+                              </If.Then>
+                              <If.Else>
+                                <Assign>
+                                  <Assign.To>
+                                    <OutArgument x:TypeArguments="x:String">
+                                      <mca:CSharpReference x:TypeArguments="x:String">msg</mca:CSharpReference>
+                                    </OutArgument>
+                                  </Assign.To>
+                                  <Assign.Value>
+                                    <InArgument x:TypeArguments="x:String">Pending Please see the remarks</InArgument>
+                                  </Assign.Value>
+                                </Assign>
+                              </If.Else>
+                            </If>
+                            <p:SendReply Request="{x:Reference __ReferenceID5}" DisplayName="SendReplyToReceive" PersistBeforeSend="True">
+                              <p:SendParametersContent>
+                                <InArgument x:TypeArguments="x:String" x:Key="outMsg">
+                                  <mca:CSharpValue x:TypeArguments="x:String">msg</mca:CSharpValue>
+                                </InArgument>
+                              </p:SendParametersContent>
+                            </p:SendReply>
+                          </Sequence>
+                          <FlowStep.Next>
+                            <FlowDecision x:Name="__ReferenceID10" DisplayName="if Inventory in Ok">
+                              <FlowDecision.Condition>
+                                <mca:CSharpValue x:TypeArguments="x:Boolean">isApprove</mca:CSharpValue>
+                              </FlowDecision.Condition>
+                              <FlowDecision.True>
+                                <FlowStep x:Name="__ReferenceID11">
+                                  <Sequence DisplayName="POS Profiling">
+                                    <Sequence.Variables>
+                                      <Variable x:TypeArguments="p:CorrelationHandle" x:Name="__ReferenceID6" Name="__handle1" />
+                                    </Sequence.Variables>
+                                    <p:Receive x:Name="__ReferenceID7" OperationName="DonePOSPRofiling" ServiceContractName="p1:IService">
+                                      <p:Receive.CorrelatesOn>
+                                        <p:XPathMessageQuery x:Key="posRequestId">
+                                          <p:XPathMessageQuery.Namespaces>
+                                            <ssx:XPathMessageContextMarkup>
+                                              <x:String x:Key="xgSc">http://tempuri.org/</x:String>
+                                            </ssx:XPathMessageContextMarkup>
+                                          </p:XPathMessageQuery.Namespaces>sm:body()/xgSc:DonePOSPRofiling/xgSc:paramPOSRequestId</p:XPathMessageQuery>
+                                      </p:Receive.CorrelatesOn>
+                                      <p:Receive.CorrelatesWith>
+                                        <InArgument x:TypeArguments="p:CorrelationHandle">
+                                          <mca:CSharpValue x:TypeArguments="p:CorrelationHandle">corrPosRequestId</mca:CSharpValue>
+                                        </InArgument>
+                                      </p:Receive.CorrelatesWith>
+                                      <p:Receive.CorrelationInitializers>
+                                        <p:RequestReplyCorrelationInitializer>
+                                          <p:RequestReplyCorrelationInitializer.CorrelationHandle>
+                                            <InArgument x:TypeArguments="p:CorrelationHandle">
+                                              <VariableValue x:TypeArguments="p:CorrelationHandle" Variable="{x:Reference __ReferenceID6}" />
+                                            </InArgument>
+                                          </p:RequestReplyCorrelationInitializer.CorrelationHandle>
+                                        </p:RequestReplyCorrelationInitializer>
+                                      </p:Receive.CorrelationInitializers>
+                                      <p:ReceiveParametersContent>
+                                        <OutArgument x:TypeArguments="x:Int32" x:Key="paramPOSRequestId">
+                                          <mca:CSharpReference x:TypeArguments="x:Int32">posRequestId</mca:CSharpReference>
+                                        </OutArgument>
+                                      </p:ReceiveParametersContent>
+                                    </p:Receive>
+                                    <p:SendReply Request="{x:Reference __ReferenceID7}" DisplayName="SendReplyToReceive" PersistBeforeSend="True">
+                                      <p:SendParametersContent>
+                                        <InArgument x:TypeArguments="x:String" x:Key="outMsg">POS Profiling Complete</InArgument>
+                                      </p:SendParametersContent>
+                                    </p:SendReply>
+                                  </Sequence>
+                                  <FlowStep.Next>
+                                    <x:Reference>__ReferenceID8</x:Reference>
+                                  </FlowStep.Next>
+                                </FlowStep>
+                              </FlowDecision.True>
+                              <FlowDecision.False>
+                                <x:Reference>__ReferenceID9</x:Reference>
+                              </FlowDecision.False>
+                            </FlowDecision>
+                          </FlowStep.Next>
+                        </FlowStep>
+                      </FlowDecision.False>
+                    </FlowDecision>
+                  </FlowStep.Next>
+                </FlowStep>
+              </FlowStep.Next>
+            </FlowStep>
+          </FlowStep.Next>
+        </FlowStep>
+      </Flowchart.StartNode>
+      <x:Reference>__ReferenceID9</x:Reference>
+      <x:Reference>__ReferenceID10</x:Reference>
+      <x:Reference>__ReferenceID11</x:Reference>
+      <x:Reference>__ReferenceID8</x:Reference>
+      <x:Reference>__ReferenceID12</x:Reference>
+      <x:Reference>__ReferenceID13</x:Reference>
+      <x:Reference>__ReferenceID14</x:Reference>
+      <x:Reference>__ReferenceID15</x:Reference>
+      <sads:DebugSymbol.Symbol>d3dDOlxVc2Vyc1xhMDEyMDAxMTY0XERvY3VtZW50c1xWaXN1YWwgU3R1ZGlvIDIwMTVcUHJvamVjdHNcTWVyY2hhbnRBcXVpcmluZ1N5c3RlbVdpdGhXRlxNQVNfV29ya0Zsb3dTZXJ2aWNlXFBPU0Zsb3cueGFtbC46A+4CDwIBAWkJkgEUAwGwAZUBDZ4BJwMBnwGhARHKARwCAX3OARfOAWACAXXXARmiAiQCASSmAh+mAmcCARyqAiHQAiwCAQPSARnSAW4CAQJtC4wBFwMBtQGNAQuRARkDAbEBmAETmAFsAwGoAZwBEZwBZgMBoAGlARPEAR8DAYIBxQETyQEhAgF+3AEb+wEnAgFV/AEbmgIgAgEymwIboQIpAgElrgIjygIvAgEIywIjzwIxAgEEeBF4agMByQGJARGJAV8DAcABfxV/dAMBvwGGARGGAWIDAbYBjwFFjwFfAwGyAbABGbABcgMBlgHBARnBAWoDAY0BvgEZvgFqAwGEAbcBHbcBfAMBgwHHAU3HAW8CAX/nASHnAXoCAWv4ASH4AXECAWHuASXuAYQBAgFg9QEh9QFyAgFW/wEh/wFpAgEzgwIfjAIoAgFJjwIfmAIoAgE9ngIhngJiAgEmuQIpuQKCAQIBE8cCKccCegIBCsACLcACjAECAQnNAl3NAnMCAQWKAkqKAlYCAVSGAiWGAm4CAUqWAkqWAmgCAUiSAiWSAm4CAT4=</sads:DebugSymbol.Symbol>
+    </Flowchart>
+  </m:POSFlow.Implementation>
+</m:POSFlow>

@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<this:DonePOSPRofiling this:EndpointConfigurationName="BasicHttpBinding_IService" mva:VisualBasic.Settings="Assembly references and imported namespaces serialized as XML namespaces" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mp="clr-namespace:MAS_WorkFlowService.PaymentSolutions;assembly=MAS_WorkFlowService, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" xmlns:mp1="clr-namespace:MAS_WorkFlowService.PaymentSolutions;assembly=MAS_WorkFlowService" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="http://tempuri.org/" xmlns:p1="http://schemas.microsoft.com/netfx/2009/xaml/servicemodel" xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:sc="clr-namespace:System.ComponentModel;assembly=System" xmlns:this="clr-namespace:MAS_WorkFlowService.PaymentSolutions.Activities;assembly=MAS_WorkFlowService" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <this:DonePOSPRofiling.Implementation>
+    <Sequence>
+      <Sequence.Variables>
+        <x:Reference>__ReferenceID1</x:Reference>
+        <x:Reference>__ReferenceID2</x:Reference>
+      </Sequence.Variables>
+      <p1:Send x:Name="__ReferenceID0" Action="http://tempuri.org/IService/DonePOSPRofiling" OperationName="DonePOSPRofiling" ServiceContractName="p:IService">
+        <p1:Send.CorrelationInitializers>
+          <p1:RequestReplyCorrelationInitializer>
+            <p1:RequestReplyCorrelationInitializer.CorrelationHandle>
+              <InArgument x:TypeArguments="p1:CorrelationHandle">
+                <VariableValue x:TypeArguments="p1:CorrelationHandle">
+                  <VariableValue.Variable>
+                    <Variable x:TypeArguments="p1:CorrelationHandle" x:Name="__ReferenceID2" />
+                  </VariableValue.Variable>
+                </VariableValue>
+              </InArgument>
+            </p1:RequestReplyCorrelationInitializer.CorrelationHandle>
+          </p1:RequestReplyCorrelationInitializer>
+        </p1:Send.CorrelationInitializers>
+        <p1:SendMessageContent>
+          <InArgument x:TypeArguments="mp1:DonePOSPRofilingRequest">[New MAS_WorkFlowService.PaymentSolutions.DonePOSPRofilingRequest() With { .paramPOSRequestId = paramPOSRequestId }]</InArgument>
+        </p1:SendMessageContent>
+        <p1:Send.EndpointConfigurationName>
+          <PropertyReference x:TypeArguments="x:String" PropertyName="EndpointConfigurationName" />
+        </p1:Send.EndpointConfigurationName>
+      </p1:Send>
+      <p1:ReceiveReply Request="{x:Reference __ReferenceID0}" Action="http://tempuri.org/IService/DonePOSPRofilingResponse">
+        <p1:ReceiveMessageContent>
+          <OutArgument x:TypeArguments="mp1:DonePOSPRofilingResponse">
+            <VariableReference x:TypeArguments="mp1:DonePOSPRofilingResponse">
+              <VariableReference.Variable>
+                <Variable x:TypeArguments="mp1:DonePOSPRofilingResponse" x:Name="__ReferenceID1" Name="tempResult_8246bd533133413dba9016e2d4b55097" />
+              </VariableReference.Variable>
+            </VariableReference>
+          </OutArgument>
+        </p1:ReceiveMessageContent>
+      </p1:ReceiveReply>
+      <Assign>
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[outMsg]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">[tempResult_8246bd533133413dba9016e2d4b55097.outMsg]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <sads:DebugSymbol.Symbol>9xBSuIeY4RK/OBfWl4Fy6ep7swFEOlxURlNfTUFTX1dvcmtGbG93U2VydmljZVxNZXJjaGFudEFxdWlyaW5nU3lzdGVtV2l0aFdGXE1BU19Xb3JrRmxvd1NlcnZpY2VcU2VydmljZSBSZWZlcmVuY2VzXFBheW1lbnRTb2x1dGlvbnNcTUFTX1dvcmtGbG93U2VydmljZS5QYXltZW50U29sdXRpb25zLklTZXJ2aWNlLkRvbmVQT1NQUm9maWxpbmcueGFtbAkgA04OAgEBJQU5DwIBCjoFRBcCAQdFBUwOAgECNEM0twECAQwqDy4fAgELPQtBHwIBCUowSmQCAQVHMUc5AgED</sads:DebugSymbol.Symbol>
+    </Sequence>
+  </this:DonePOSPRofiling.Implementation>
+</this:DonePOSPRofiling>

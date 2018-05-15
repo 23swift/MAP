@@ -1,0 +1,2 @@
+MAS_WorkFlowService.PaymentSolutions.IService.LoadRequestToPOSFlow.g.xaml
+XamlStaticHelperNamespace._XamlStaticHelper

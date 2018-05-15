@@ -1,0 +1,199 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C1F0B500-4B11-49B0-8ACB-5A00D390CC45}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DA</RootNamespace>
+    <AssemblyName>DA</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MAS_DB.cs" />
+    <Compile Include="Migrations\201804030436104_initialCreate.cs" />
+    <Compile Include="Migrations\201804030436104_initialCreate.Designer.cs">
+      <DependentUpon>201804030436104_initialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804050355218_ChangeStatusType.cs" />
+    <Compile Include="Migrations\201804050355218_ChangeStatusType.Designer.cs">
+      <DependentUpon>201804050355218_ChangeStatusType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804120428353_addPosRequestTable.cs" />
+    <Compile Include="Migrations\201804120428353_addPosRequestTable.Designer.cs">
+      <DependentUpon>201804120428353_addPosRequestTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804150220092_addWithRequirementWithException.cs" />
+    <Compile Include="Migrations\201804150220092_addWithRequirementWithException.Designer.cs">
+      <DependentUpon>201804150220092_addWithRequirementWithException.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804150719283_addRequestApprovalSettings.cs" />
+    <Compile Include="Migrations\201804150719283_addRequestApprovalSettings.Designer.cs">
+      <DependentUpon>201804150719283_addRequestApprovalSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804151743003_miscDbUpdate.cs" />
+    <Compile Include="Migrations\201804151743003_miscDbUpdate.Designer.cs">
+      <DependentUpon>201804151743003_miscDbUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804270930001_addMAEFModel.cs" />
+    <Compile Include="Migrations\201804270930001_addMAEFModel.Designer.cs">
+      <DependentUpon>201804270930001_addMAEFModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805020449314_addBranchEntity.cs" />
+    <Compile Include="Migrations\201805020449314_addBranchEntity.Designer.cs">
+      <DependentUpon>201805020449314_addBranchEntity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805020637158_addApprovalSetup.cs" />
+    <Compile Include="Migrations\201805020637158_addApprovalSetup.Designer.cs">
+      <DependentUpon>201805020637158_addApprovalSetup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805020647320_addRequestTypeOnRequest.cs" />
+    <Compile Include="Migrations\201805020647320_addRequestTypeOnRequest.Designer.cs">
+      <DependentUpon>201805020647320_addRequestTypeOnRequest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805020702234_removeApprovalCountFromRequiredApproval.cs" />
+    <Compile Include="Migrations\201805020702234_removeApprovalCountFromRequiredApproval.Designer.cs">
+      <DependentUpon>201805020702234_removeApprovalCountFromRequiredApproval.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805020705236_addUserOnRequiredApproval.cs" />
+    <Compile Include="Migrations\201805020705236_addUserOnRequiredApproval.Designer.cs">
+      <DependentUpon>201805020705236_addUserOnRequiredApproval.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805030556583_addIsApprovedField.cs" />
+    <Compile Include="Migrations\201805030556583_addIsApprovedField.Designer.cs">
+      <DependentUpon>201805030556583_addIsApprovedField.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805040830254_makeDateTimeNullInBranch.cs" />
+    <Compile Include="Migrations\201805040830254_makeDateTimeNullInBranch.Designer.cs">
+      <DependentUpon>201805040830254_makeDateTimeNullInBranch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805150712522_addEmailAddTorequest.cs" />
+    <Compile Include="Migrations\201805150712522_addEmailAddTorequest.Designer.cs">
+      <DependentUpon>201805150712522_addEmailAddTorequest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\BaseEntity.cs" />
+    <Compile Include="Models\Branch.cs" />
+    <Compile Include="Models\MAEF.cs" />
+    <Compile Include="Models\POSRequest.cs" />
+    <Compile Include="Models\Request.cs" />
+    <Compile Include="Models\RequestApprovals.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\IRepository.cs" />
+    <Compile Include="Repository\IRequestRepository.cs" />
+    <Compile Include="Repository\Repository.cs" />
+    <Compile Include="Repository\RequestRepository.cs" />
+    <Compile Include="Repository\IRequiredApprovalRepository.cs" />
+    <Compile Include="Repository\IApprovalSetupRepository.cs" />
+    <Compile Include="UnitOfWork\ApprovalSetupRepository.cs" />
+    <Compile Include="UnitOfWork\IUnitOfWork.cs" />
+    <Compile Include="Repository\RequiredApprovalRepository.cs" />
+    <Compile Include="UnitOfWork\UnitOfWork.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201804030436104_initialCreate.resx">
+      <DependentUpon>201804030436104_initialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804050355218_ChangeStatusType.resx">
+      <DependentUpon>201804050355218_ChangeStatusType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804120428353_addPosRequestTable.resx">
+      <DependentUpon>201804120428353_addPosRequestTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804150220092_addWithRequirementWithException.resx">
+      <DependentUpon>201804150220092_addWithRequirementWithException.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804150719283_addRequestApprovalSettings.resx">
+      <DependentUpon>201804150719283_addRequestApprovalSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804151743003_miscDbUpdate.resx">
+      <DependentUpon>201804151743003_miscDbUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804270930001_addMAEFModel.resx">
+      <DependentUpon>201804270930001_addMAEFModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805020449314_addBranchEntity.resx">
+      <DependentUpon>201805020449314_addBranchEntity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805020637158_addApprovalSetup.resx">
+      <DependentUpon>201805020637158_addApprovalSetup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805020647320_addRequestTypeOnRequest.resx">
+      <DependentUpon>201805020647320_addRequestTypeOnRequest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805020702234_removeApprovalCountFromRequiredApproval.resx">
+      <DependentUpon>201805020702234_removeApprovalCountFromRequiredApproval.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805020705236_addUserOnRequiredApproval.resx">
+      <DependentUpon>201805020705236_addUserOnRequiredApproval.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805030556583_addIsApprovedField.resx">
+      <DependentUpon>201805030556583_addIsApprovedField.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805040830254_makeDateTimeNullInBranch.resx">
+      <DependentUpon>201805040830254_makeDateTimeNullInBranch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805150712522_addEmailAddTorequest.resx">
+      <DependentUpon>201805150712522_addEmailAddTorequest.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

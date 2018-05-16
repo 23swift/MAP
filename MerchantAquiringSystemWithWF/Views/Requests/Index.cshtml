@@ -1,0 +1,93 @@
+﻿@model IEnumerable<MerchantAquiringSystemWithWF.Models.RequestViewModel>
+
+@{
+    ViewBag.Title = "Request";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    //string routeView =(string) ViewBag.view;
+}
+
+<h2>@ViewBag.Title</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<div class="row">
+    <div class="col-md-12">
+        <table class="table table-condensed">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.RequestType)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.RequestDescription)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Status)
+
+                    </th>
+                    @*<th>
+                    @Html.DisplayNameFor(model => model.WorkflowInstanceId)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.BookMark)
+                </th>*@
+                    <th>
+                        @Html.DisplayNameFor(model => model.CreatedDate)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.CreatedBy)
+                    </th>
+                    <th></th>
+                </tr>
+            <thead>
+            <tbody>
+                @foreach (var item in Model)
+            {
+
+                    <tr>
+                        
+                        <td>
+                            @Html.DisplayFor(modelItem => item.RequestType)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.RequestDescription)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Status)
+                        </td>
+                        @*<td>
+                        @Html.DisplayFor(modelItem => item.WorkflowInstanceId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.BookMark)
+                    </td>*@
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CreatedDate)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CreatedBy)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                            @if (item.Status.Equals(MAS_WorkFlowService.RequestState.APPROVED.DisplayName)) {
+                                 @Html.ActionLink("Details", "PickRequestForMDCSProcessing", "RequestUIFlow", new { Id = item.Id }, null) 
+                            }
+                            else
+                            {
+                                @Html.ActionLink("Details", item.View, "RequestUIFlow", new { id = item.Id }, null) 
+                            }
+                            |
+                            @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                        </td>
+                    </tr>
+
+
+                }
+            </tbody>
+</table>
+
+
+    </div>
+</div>
+

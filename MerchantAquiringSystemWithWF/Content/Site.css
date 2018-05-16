@@ -1,0 +1,82 @@
+﻿body {
+    /*padding-top: 50px;*/
+    padding-bottom: 20px;
+   /*background-color:silver;*/
+    
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+.navbar-default {
+    background-color: #043673;
+    border-color: #e7e7e7;
+    
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: #FDB913;
+}
+.navbar-default .navbar-nav > li > a:hover {
+    color: whitesmoke;
+}
+.navbar-default .navbar-brand {
+    color: whitesmoke;
+}
+a {
+    color: #043673;
+}
+.bg-primary {
+    background-color: #043673 !important;
+}
+.navbar-dark .navbar-nav .nav-link {
+    color: #FDB913;
+}
+textarea:not(textarea), textarea.form-control:not(textarea), input.form-control:not(textarea), input[type=text]:not(textarea), input[type=password]:not(textarea), input[type=email]:not(textarea), input[type=number]:not(textarea), [type=text].form-control:not(textarea), [type=password].form-control:not(textarea), [type=email].form-control:not(textarea), [type=tel].form-control:not(textarea), [contenteditable].form-control:not(textarea) {
+    height: calc(1.11875rem + 2px);
+    font-size:12px;
+}
+.tab-pane {
+    padding-top:10px;
+}
+
+.container {
+    padding:0;
+    margin:0;
+}
+ hr {
+    padding:0;
+    margin:0;
+    margin-top:3px;
+    margin-bottom:20px;
+}
+.control-label {
+    color:#043673;
+    font-weight:500;
+}
+h4 {
+    color:#FDB913;
+}
+select.form-control:not([size]):not([multiple]) {
+    padding:0;
+    margin:0;
+    height: calc(1.21875rem + .5px);
+     font-size:12px;
+}
